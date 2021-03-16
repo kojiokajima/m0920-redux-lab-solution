@@ -8,6 +8,11 @@ const initialState = {
 
 const personReducer = (state = initialState, action) => {
 
+  // console.log('--------------------------')
+  // console.log('STATE IS: ', state)
+  // console.log('--------------------------')
+
+
     switch(action.type){
       case actionType.addPerson:
         const newPerson = {

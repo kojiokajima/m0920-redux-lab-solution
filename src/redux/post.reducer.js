@@ -13,6 +13,7 @@ const initState = {
 
 const postsReducer = (state = initState, action) => {
 
+
     switch(action.type){
         default:
             return state
