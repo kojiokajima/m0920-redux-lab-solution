@@ -21,7 +21,8 @@ export const selectPostsArray = createSelector(
     // console.log("YO: ", postsObj)
     [selectPosts],
     (postsObj) => postsObj.posts.filter(post => post.author === 'user-1')
-    // 第一引数[selectPosts]の返り値が、第二引数の中の関数の引数に入るってことにしとく
+    // 第一引数[selectPosts]の返り値(つまりstate.postsObj)が、第二引数の中の関数の引数に入るってことにしとく
+    // 第二引数の中の関数の引数postsObjは、自分でつけた名前だと思う
 )
 
 console.log("YOOO: ", selectPostsArray)
