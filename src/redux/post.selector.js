@@ -16,13 +16,14 @@ const selectPosts = state => {
 // だけでいい。storeのなかにあるstateの内、keyがpostsObjのものをselectPostsって変数に入れてる
 
 
-// selectPostsArrayには関数が入ってる！
 export const selectPostsArray = createSelector(
-    // console.log("YO: ", postsObj)
     [selectPosts],
     (postsObj) => postsObj.posts.filter(post => post.author === 'user-1')
     // 第一引数[selectPosts]の返り値(つまりstate.postsObj)が、第二引数の中の関数の引数に入るってことにしとく
     // 第二引数の中の関数の引数postsObjは、自分でつけた名前だと思う
+    // 呼び出し元(Posts.js)から渡ってくるstateどこで使っとんねん
+    // あーわかった。Posts.jsから渡ってくるstateは、第一引数のselectPost関数の中で使ってるのか
+    // でもそしたらなんでselectPosts(state)って書かなくていいんだろ
 )
 
 console.log("YOOO: ", selectPostsArray)
